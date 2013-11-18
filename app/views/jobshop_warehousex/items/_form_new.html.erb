@@ -1,0 +1,16 @@
+<%= simple_form_for @item do |f| %>    
+
+  <%= f.input :purchase_order_id, :label => t("PO#"), :readonly => true, :input_html => {:value => @purchase_order.id} %> 
+  <%= f.input :supplier_name, :label => t('Supplier'), :readonly => true, :input_html => {:value => @purchase_order.supplier.name} %>
+  <%= f.input :unit_price, :label => t("Unit Price($)"), :readonly => true, :input_html => {:value => @purchase_order.try(:unit_price)} %> 
+  <%= f.input :name, :label => t("Item Name") %>
+  <%= f.input :spec, :label => t("Spec") %>
+  <%= f.input :in_date, :label => t("In Date"), :as => :string %> 
+  <%= f.input :in_qty, :label => t("In Qty") %>
+  <%= f.input :unit, :label => t("Unit"), :readonly => true, :input_html => {:value => @purchase_order.try(:unit)} %>  
+  <%= f.input :storage_location, :label => t("Storage Location") %> 
+  <%= f.input :inspection, :label => t("Inspection"), :input_html => {:rows => 4} %> 
+  
+  <%= link_to t('Back'), SUBURI + "/authentify/view_handler?index=0", :class => BUTTONS_CLS['action'] %>
+  <%= f.button :submit, t('Save') %>  
+<% end %>
