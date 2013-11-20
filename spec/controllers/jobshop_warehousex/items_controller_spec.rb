@@ -30,7 +30,7 @@ module JobshopWarehousex
     render_views
     
     describe "GET 'index'" do
-      it "returns all quotes" do
+      it "returns all items" do
         user_access = FactoryGirl.create(:user_access, :action => 'index', :resource =>'jobshop_warehousex_items', :role_definition_id => @role.id, :rank => 1,
         :sql_code => "JobshopWarehousex::Item.where(:rejected => false).order('created_at DESC')")
         session[:user_id] = @u.id
@@ -41,7 +41,7 @@ module JobshopWarehousex
         assigns(:items).should =~ [q, q1]
       end
       
-      it "should only return the quotes which belongs to the quote task" do
+      it "should only return the tiems which belongs to the order" do
         user_access = FactoryGirl.create(:user_access, :action => 'index', :resource =>'jobshop_warehousex_items', :role_definition_id => @role.id, :rank => 1,
         :sql_code => "JobshopWarehousex::Item.where(:rejected => false).order('created_at DESC')")
         session[:user_id] = @u.id

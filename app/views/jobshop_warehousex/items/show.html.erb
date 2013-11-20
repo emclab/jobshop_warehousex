@@ -1,3 +1,7 @@
+<% if false %>
+  <%= render inline: ERB.new(@erb_code).result(binding) %>
+  
+<% else %>
 <div id="main_body">
 <h4><%=t('Warehouse Item Info') %></h4>
 
@@ -64,3 +68,5 @@
 		<%= link_to t('New Log'), SUBURI + commonx.new_log_path(:resource_id => @item.id, :resource_name => params[:controller], :subaction => 'warehouse_item', :format => :js), :remote => true, 
                           :id => 'new_log_link', :class => BUTTONS_CLS['action'] if has_action_right?('create_warehouse_item', 'commonx/logs') %>    	
 </div>
+
+<% end %>

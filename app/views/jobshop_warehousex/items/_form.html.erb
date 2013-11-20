@@ -1,3 +1,7 @@
+<% if false %>
+  <%= render inline: ERB.new(@erb_code).result(binding) %>
+  
+<% else %>
 <%= simple_form_for @item do |f| %>    
 
   <%= f.input :purchase_order_id, :label => t("PO#"), :readonly => true, :input_html => {:value => @purchase_order.id} %> 
@@ -18,4 +22,6 @@
   
   <%= link_to t('Back'), SUBURI + "/authentify/view_handler?index=0", :class => BUTTONS_CLS['action'] %>
   <%= f.button :submit, t('Save') %>  
+<% end %>
+
 <% end %>
