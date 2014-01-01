@@ -27,6 +27,7 @@ module JobshopWarehousex
       if @item.save
         redirect_to URI.escape(SUBURI + "/authentify/view_handler?index=0&msg=Successfully Saved!")
       else
+        @purchase_order = JobshopWarehousex.po_class.find_by_id(params[:item][:purchase_order_id]) if params[:item].present? && params[:item][:purchase_order_id].present?
         flash[:notice] = t('Data Error. Not Saved!')
         render 'new'
       end

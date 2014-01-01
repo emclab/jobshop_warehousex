@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   mount PurchaseOrderx::Engine => '/purchase_orderx'
   mount Supplierx::Engine => '/supplierx'
   mount InQuotex::Engine => '/in_quotex'
+  mount StateMachineLogx::Engine => '/sm_log'
   
   resource :session
   

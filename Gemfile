@@ -15,6 +15,7 @@ gem 'init_event_taskx', :path => '../init_event_taskx'
 gem 'purchase_orderx', :path => '../purchase_orderx'
 gem 'supplierx', :path => '../supplierx'
 gem 'in_quotex', :path => '../in_quotex'
+gem 'state_machine_logx', :path => '../state_machine_logx'
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
