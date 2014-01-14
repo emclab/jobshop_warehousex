@@ -42,3 +42,4 @@ zh-CN:
   'Price > 0' : '价格必须大于0'
   Unit Price : '单价(￥)'
   Unit : '单位'
+  Item Category : '库存分类'

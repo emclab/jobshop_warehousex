@@ -50,6 +50,9 @@ describe "LinkTests" do
       @o = FactoryGirl.create(:purchase_orderx_order, :quote_id => @q.id)
       @o1 = FactoryGirl.create(:purchase_orderx_order, :quote_id => @q1.id)
       
+      b = FactoryGirl.create(:commonx_misc_definition, :for_which => 'wh_item_category', :active => true)
+      b = FactoryGirl.create(:commonx_misc_definition, :for_which => 'warehouse', :active => true)
+      
       visit '/'
       #save_and_open_page
       fill_in "login", :with => @u.login

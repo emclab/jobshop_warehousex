@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   mount Supplierx::Engine => '/supplierx'
   mount InQuotex::Engine => '/in_quotex'
   mount StateMachineLogx::Engine => '/sm_log'
+  mount BizWorkflowx::Engine => '/workflow'
   
   resource :session
   

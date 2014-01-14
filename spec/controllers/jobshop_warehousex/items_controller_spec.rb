@@ -25,6 +25,9 @@ module JobshopWarehousex
       @q1 = FactoryGirl.create(:in_quotex_quote, :task_id => @q_task1.id, :supplier_id => @supplier.id)
       @o = FactoryGirl.create(:purchase_orderx_order, :quote_id => @q.id)
       @o1 = FactoryGirl.create(:purchase_orderx_order, :quote_id => @q1.id)
+      
+      b = FactoryGirl.create(:commonx_misc_definition, :for_which => 'wh_item_category', :active => true)
+      b = FactoryGirl.create(:commonx_misc_definition, :for_which => 'warehouse', :active => true)
     end
     
     render_views

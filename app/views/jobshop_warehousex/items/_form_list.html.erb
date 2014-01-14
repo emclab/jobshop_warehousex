@@ -7,6 +7,8 @@
 		<tr>
 			<th><%= t('#') %></th>
 			<th><%= t('In Date') %></th>
+			<th><%= t('Warehouse') %></th>
+			<th><%= t('Item Category') %></th>
 			<th><%= t('PO#') %></th>
 			<th><%= t('Item Name') %></th>
 			<th><%= t('Spec') %></th>
@@ -29,6 +31,8 @@
 		  	  <td><%= link_to r.id.to_s, SUBURI + "/authentify/view_handler?index=1&url=#{item_path(r)}" %></td>
 		  	<% end %>
 		  	<td><%= r.in_date.strftime("%Y/%m/%d") %></td>
+		  	<td><%= prt(r, 'warehouse.name') %></td>
+		  	<td><%= prt(r, 'item_category.name') %></td>
 		  	<% if has_action_right?('show', JobshopWarehousex.po_class.to_s.underscore.pluralize, JobshopWarehousex.po_class.find_by_id(r.purchase_order_id))%>
 		  	  <td><%= link_to r.purchase_order_id, SUBURI + "/authentify/view_handler?index=1&url=#{SUBURI + CGI::escape(eval(JobshopWasehousex.show_po_path))}" %></td>
 		  	<% else %>

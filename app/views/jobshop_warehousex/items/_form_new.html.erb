@@ -6,6 +6,8 @@
 
   <%= f.input :purchase_order_id, :label => t("PO#"), :readonly => true, :input_html => {:value => @purchase_order.id} %> 
   <%= f.input :supplier_name, :label => t('Supplier'), :readonly => true, :input_html => {:value => @purchase_order.supplier.name} %>
+  <%= f.input :warehouse_id, :label => t("Warehouse"), :collection => @warehouse, :include_blank => true %>
+  <%= f.input :item_category_id, :label => t("Item Category"), :collection => @item_category, :include_blank => true %>
   <%= f.input :unit_price, :label => t("Unit Price($)"), :readonly => true, :input_html => {:value => @purchase_order.try(:unit_price)} %> 
   <%= f.input :name, :label => t("Item Name") %>
   <%= f.input :spec, :label => t("Spec") %>

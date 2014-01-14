@@ -12,6 +12,16 @@ module JobshopWarehousex
       c.should_not be_valid
     end
     
+    it "should reject nil warehouse id" do
+      c = FactoryGirl.build(:jobshop_warehousex_item, :warehouse_id => nil)
+      c.should_not be_valid
+    end
+    
+    it "should reject 0 item_category" do
+      c = FactoryGirl.build(:jobshop_warehousex_item, :item_category_id => 0)
+      c.should_not be_valid
+    end
+    
     it "should reject 0 qty" do
       c = FactoryGirl.build(:jobshop_warehousex_item, :in_qty => 0)
       c.should_not be_valid
